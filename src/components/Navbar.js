@@ -1,3 +1,5 @@
+import { Box, Flex } from "rebass";
+
 import { Link } from "gatsby";
 import React from "react";
 import github from "../img/github-icon.svg";
@@ -30,11 +32,11 @@ const Navbar = class extends React.Component {
   render() {
     return (
       <nav
-        className="navbar is-fixed-top is-transparent"
+        className="navbar is-transparent"
         role="navigation"
         aria-label="main-navigation"
       >
-        <div className="container">
+        <Flex className="container">
           <div className="navbar-brand">
             <Link to="/" className="navbar-item" title="Logo">
               <img src={logo} alt="Montlake logo" />
@@ -48,19 +50,28 @@ const Navbar = class extends React.Component {
           </div>
           <div id="navMenu" className="navbar-menu">
             <div className="navbar-start has-text-centered">
-              <Link className="navbar-item" to="/about">
-                About
-              </Link>
-              <Link className="navbar-item" to="/products">
-                Technology
-              </Link>
+              <Flex
+                flexDirection={["column", "row"]}
+                justifyContent="center"
+                alignItems="center"
+                pb={[0, 3]}
+              >
+                <Box>
+                  <Link className="navbar-item" to="/about">
+                    About
+                  </Link>
+                </Box>
+                <Link className="navbar-item" to="/products">
+                  Technology
+                </Link>
 
-              <Link className="navbar-item" to="/contact">
-                Contact
-              </Link>
-              <Link className="navbar-item" to="/contact/examples">
-                Form Examples
-              </Link>
+                <Link className="navbar-item" to="/contact">
+                  Contact
+                </Link>
+                <Link className="navbar-item" to="/contact/examples">
+                  Form Examples
+                </Link>
+              </Flex>
             </div>
             <div className="navbar-end has-text-centered">
               <a
@@ -75,7 +86,7 @@ const Navbar = class extends React.Component {
               </a>
             </div>
           </div>
-        </div>
+        </Flex>
       </nav>
     );
   }

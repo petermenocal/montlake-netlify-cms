@@ -1,5 +1,10 @@
 @import "~bulma/sass/utilities/initial-variables"
-
+@import "~bulma/sass/utilities/_all.sass"
+@import "~bulma/sass/base/_all.sass"
+@import "~bulma/sass/elements/container.sass"
+@import "~bulma/sass/elements/form.sass"
+@import "~bulma/sass/components/navbar.sass"
+@import "~bulma"
 // Config vars
 // Kalidi logo brand color: #FD461E
 $montlake-blue: #247cc0
@@ -8,12 +13,27 @@ $montlake-blue-invert: #fff
 $primary: $montlake-blue
 $primary-invert: $montlake-blue-invert
 $body-color: #212121 
+$pale-white: #faf9f7
+
+h1, h2
+  color: $montlake-blue !important
 
 .navbar, .navbar-menu 
   background: #f2f2f2 !important
 
 .navbar .navbar-menu
   box-shadow:none !important
+
+.navbar
+  padding-top: 20px
+
+.carousel-item
+  min-height: 700px !important
+  object-fit: cover
+  object-position: center center;
+
+.title 
+  background: #faf9f7 !important
 
 .content .taglist
   list-style: none
@@ -46,5 +66,3 @@ $body-color: #212121
 
 .margin-top-0
   margin-top: 0 !important
-
-@import "~bulma"
